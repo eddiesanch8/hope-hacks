@@ -5,6 +5,7 @@ const path = require("path");
 const cors = require("cors");
 const PORT = 3000;
 const mysql = require("mysql2/promise");
+const hbs = require("hbs"); //JANE DID IT!!!!
 const getArticle = require("./lib/api/api");
 require("dotenv").config();
 
@@ -14,12 +15,19 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
+
 // setting up pathing for ejs so it knows where views lives...
 app.set("view engine", "hbs");
 app.set("views", path.join(__dirname, "views"));
 
+//register partials
+hbs.registerPartials(path.join(__dirname, 'views/partials')); //JANE DID IT!!!!
+
 app.get("/", (req, res) => {
-  res.render("index");
+  res.render("index", {
+    intro: "Welcome to ByteSized!",
+    message: "Your new favorite digital newsletter that connects tech professionals, students, and AI enthusiasts with curated news and research on artificial intelligence, making it easy to stay informed about the latest trends, breakthroughs, and applications."
+  });
 });
 
 app.get("/search", (req, res) => {
