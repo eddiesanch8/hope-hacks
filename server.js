@@ -1,17 +1,18 @@
 // --------------------- setting up instance of express --------------------- \\
-const path = require("path");
 const express = require("express");
 const app = express();
-require("dotenv").config();
+const path = require("path");
 const cors = require("cors");
-app.use(cors());
 const PORT = 3000;
 const mysql = require("mysql2/promise");
 const hbs = require("hbs"); //JANE DID IT!!!!
+const getArticle = require("./lib/api/api");
+require("dotenv").config();
 
 // --------------------- server settings --------------------- \\
 
 app.use(express.urlencoded({ extended: true }));
+app.use(cors());
 app.use(express.json());
 app.use(express.static(path.join(__dirname, "public")));
 
@@ -36,32 +37,16 @@ app.get("/search", (req, res) => {
   res.json({ search: searchTerm });
 });
 
-// --------------------------- database connections---------------------------- \\
-
-// async function connectToDatabase() {
-//   try {
-//     const connection = await mysql.createConnection({
-//       host: "127.0.0.1",
-//       user: "root", // Or your MySQL username
-//       password: "Getquery45!", // Your MySQL password
-//       database: "mock_company", // The database you want to connect to
-//     });
-
-//     console.log("Connected to MySQL database!");
-
-//     // Example query
-//     const [rows, fields] = await connection.execute(
-//       "SELECT * FROM joinslesson_saleman"
-//     );
-//     console.log(rows);
-//     await connection.end(); // Close the connection when done
-//   } catch (error) {
-//     console.error("Error connecting to MySQL:", error);
-//   }
-// }
-
-// connectToDatabase();
-
+// --------------------------- testing site--------------------------- \\
+app.get("/test", async (req, res) => {
+  try {
+    const searchTerm = req.query.search || "No search term provided";
+    const data = await getArticle(searchTerm);
+    res.json(data);
+  } catch (err) {
+    console.error(err);
+  }
+});
 // --------------------------- server gets booted---------------------------- \\
 
 app.listen(PORT, () => {
