@@ -46,6 +46,8 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/signup", (req, res)=> { res.render("signup")}) 
+
 // this is where our API fetch will happen
 app.get("/search", async (req, res) => {
   try {
