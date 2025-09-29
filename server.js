@@ -37,6 +37,8 @@ app.get("/search", (req, res) => {
   res.json({ search: searchTerm });
 });
 
+app.get("/signup", (req, res)=> { res.render("signup")}) 
+
 // --------------------------- testing site--------------------------- \\
 app.get("/test", async (req, res) => {
   try {
