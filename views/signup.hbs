@@ -4,7 +4,7 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Sign Up - ByteSized</title>
-   {{!-- <link rel="stylesheet" href="/src/signup.css"> --}}
+   <link rel="stylesheet" href="/src/signup.css">
 </head>
 <body>
    {{>header}}
@@ -12,13 +12,18 @@
    <main>
        <h1>Create Your Account</h1>
        <div class="signup-container">
-           <form id="signupForm">
-               <input type="text" name="firstName" placeholder="First Name" required>
-               <input type="text" name="lastName" placeholder="Last Name" required>
-               <input type="email" name="email" placeholder="Email" required>
-               <input type="password" name="password" placeholder="Password" required>
-               <input type="password" name="confirmPassword" placeholder="Confirm Password" required>
-               <button type="submit">Sign Up</button>
+               <form id="signupForm">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name"  id="first_name" placeholder="First Name"required>
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" placeholder="Last Name" required>
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" placeholder="Email" required>
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password" placeholder="Password" required>
+            <label for="confirm_password">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required>
+            <button type="submit">Sign Up</button>
            </form>
 
            <!-- Thank you message (hidden by default) -->
