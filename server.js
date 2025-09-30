@@ -48,6 +48,10 @@ app.get("/", (req, res) => {
   });
 });
 
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
+
 // this actually where our search page will go
 app.get("/dashboard", (req, res) => {
   res.render("index");
