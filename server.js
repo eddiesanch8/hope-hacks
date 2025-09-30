@@ -30,7 +30,7 @@ connectToDatabase();
 // setting up pathing for ejs so it knows where views lives...
 app.set("view engine", "hbs");
 // change back for non-testing
-// app.set("views", path.join(__dirname, "views"));
+app.set("views", path.join(__dirname, "views"));
 
 // please dont uncomment or delete this, it is the set up for my testing routes on test-folder: (EDUARDO DID THIS)
 // app.set("views", path.join(__dirname, "test-folder"));
@@ -43,7 +43,8 @@ hbs.registerPartials(path.join(__dirname, "views/partials")); //JANE DID IT!!!!
 app.get("/", (req, res) => {
   res.render("index", {
     intro: "Welcome to ByteSized!",
-    message: "Your new favorite digital newsletter that connects tech professionals, students, and AI enthusiasts with curated news and research on artificial intelligence, making it easy to stay informed about the latest trends, breakthroughs, and applications."
+    message:
+      "Your new favorite digital newsletter that connects tech professionals, students, and AI enthusiasts with curated news and research on artificial intelligence, making it easy to stay informed about the latest trends, breakthroughs, and applications.",
   });
 });
 
