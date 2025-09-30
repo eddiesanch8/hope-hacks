@@ -43,8 +43,7 @@ hbs.registerPartials(path.join(__dirname, "views/partials")); //JANE DID IT!!!!
 app.get("/", (req, res) => {
   res.render("index", {
     intro: "Welcome to ByteSized!",
-    message:
-      "Your new favorite digital newsletter that connects tech professionals, students, and AI enthusiasts with curated news and research on artificial intelligence, making it easy to stay informed about the latest trends, breakthroughs, and applications.",
+    message: "Your new favorite digital newsletter that connects tech professionals, students, and AI enthusiasts with curated news and research on artificial intelligence, making it easy to stay informed about the latest trends, breakthroughs, and applications."
   });
 });
 
@@ -81,6 +80,6 @@ app.get("/search", authenticateToken, async (req, res) => {
 //   res.render("signup");
 // });
 
-// app.listen(PORT, () => {
-//   console.log(`Server listening on ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server listening on ${PORT}`);
+});
