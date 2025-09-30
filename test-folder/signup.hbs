@@ -1,0 +1,100 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="js/signup.js" defer></script>
+    <title>Sign Up</title>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; } body { font-family:
+      "Segoe UI", Tahoma, Geneva, Verdana, sans-serif; background:
+      linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh;
+      display: flex; align-items: center; justify-content: center; padding: 2rem
+      0; } .signup-container { background: white; padding: 2rem; border-radius:
+      10px; box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1); width: 100%; max-width:
+      400px; } .signup-header { text-align: center; margin-bottom: 2rem; }
+      .signup-header h1 { color: #333; margin-bottom: 0.5rem; } .signup-header p
+      { color: #666; font-size: 0.9rem; } .form-group { margin-bottom: 1.5rem; }
+      .form-group label { display: block; margin-bottom: 0.5rem; color: #333;
+      font-weight: 500; } .form-group input { width: 100%; padding: 0.75rem;
+      border: 2px solid #e1e1e1; border-radius: 5px; font-size: 1rem;
+      transition: border-color 0.3s ease; } .form-group input:focus { outline:
+      none; border-color: #667eea; } .form-row { display: flex; gap: 1rem; }
+      .form-row .form-group { flex: 1; } .signup-btn { width: 100%; padding:
+      0.75rem; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white; border: none; border-radius: 5px; font-size: 1rem;
+      font-weight: 500; cursor: pointer; transition: transform 0.2s ease; }
+      .signup-btn:hover { transform: translateY(-2px); } .terms { margin-top:
+      1rem; font-size: 0.8rem; color: #666; text-align: center; } .terms a {
+      color: #667eea; text-decoration: none; } .terms a:hover { text-decoration:
+      underline; } .login-link { text-align: center; margin-top: 2rem;
+      padding-top: 1rem; border-top: 1px solid #e1e1e1; } .login-link a { color:
+      #667eea; text-decoration: none; font-weight: 500; } .login-link a:hover {
+      text-decoration: underline; }
+    </style>
+  </head>
+  <body>
+    <div
+      id="successMsg"
+      style="display:none; color:green; width:300px; height:100px; background-color:rgb(245, 245, 248); "
+    >
+      Signup successful! Redirecting to login...
+    </div>
+    <div class="signup-container">
+
+      <div class="signup-header">
+        <h1>Create Account</h1>
+        <p>Join us today</p>
+      </div>
+
+      <form id="signupForm" action="/signup" method="post">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" id="first_name" name="first_name" required />
+          </div>
+
+          <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" id="last_name" name="last_name" required />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" required />
+        </div>
+
+        <div class="form-group">
+          <label for="confirm_password">Password</label>
+          <input
+            type="confirm_password"
+            id="confirm_password"
+            name="confirm_password"
+            required
+          />
+        </div>
+
+        <button type="submit" value="ok" class="signup-btn" href="/login">Create
+          Account</button>
+      </form>
+
+      <div class="terms">
+        By signing up, you agree to our
+        <a href="#">Terms of Service</a>
+        and
+        <a href="#">Privacy Policy</a>
+      </div>
+
+      <div class="login-link">
+        Already have an account?
+        <a href="login.html">Sign in here</a>
+      </div>
+
+    </div>
+  </body>
+</html>

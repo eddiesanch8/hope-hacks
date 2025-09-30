@@ -30,7 +30,7 @@ connectToDatabase();
 // setting up pathing for ejs so it knows where views lives...
 app.set("view engine", "hbs");
 // change back for non-testing
-app.set("views", path.join(__dirname, "views"));
+// app.set("views", path.join(__dirname, "views"));
 
 // please dont uncomment or delete this, it is the set up for my testing routes on test-folder: (EDUARDO DID THIS)
 // app.set("views", path.join(__dirname, "test-folder"));
@@ -74,13 +74,13 @@ app.get("/search", authenticateToken, async (req, res) => {
 // --------------------------------------- testing site -------------------------- \\
 
 // renders pages for login/signup
-// app.get("/login", (req, res) => {
-//   res.render("login");
-// });
-// app.get("/signup", (req, res) => {
-//   res.render("signup");
-// });
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
 
-// app.listen(PORT, () => {
-//   console.log(`Server listening on ${PORT}`);
-// });
+app.listen(PORT, () => {
+  console.log(`Server listening on ${PORT}`);
+});
