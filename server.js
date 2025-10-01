@@ -11,7 +11,7 @@ const connectToDatabase = require("./config/db");
 const getArticle = require("./lib/api");
 const authRoutes = require("./routes/auth");
 const authenticateToken = require("./routes/authToken");
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
 
 //------------------------------- server settings --------------------------------------- \\
 
@@ -43,7 +43,7 @@ hbs.registerPartials(path.join(__dirname, "views/partials")); //JANE DID IT!!!!
 app.get("/", (req, res) => {
   res.render("index", {
     intro: "Welcome to ByteSized!",
-    message: "Your new favorite digital newsletter that connects tech professionals, students, and AI enthusiasts with curated news and research on artificial intelligence, making it easy to stay informed about the latest trends, breakthroughs, and applications."
+    message: "Your new favorite personal newsletter that connects tech professionals, students, and AI enthusiasts with curated news and research on artificial intelligence, making it easy to stay informed about the latest trends, breakthroughs, and applications."
   });
 });
 
@@ -52,8 +52,8 @@ app.get("/signup", (req, res) => {
 });
 
 // this actually where our search page will go
-app.get("/dashboard", (req, res) => {
-  res.render("index");
+app.get("/dashboard", (req, res) => { //JANE DID IT!!!
+  res.render("dashboard");
 });
 
 // this is where our API fetch will happen, it is our exposed endpoint...
