@@ -35,7 +35,6 @@ header img {
     padding: 10px 15px;
     text-decoration: none;
     font-size: 16px;
-    border: 1px solid rgb(205, 203, 203);
 }
 
 .dropdown .content {
@@ -62,7 +61,7 @@ header img {
 
 /* body */
 .dashboard {
-    height: 100vh;
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
     text-align: center;
@@ -70,11 +69,11 @@ header img {
     background-image: url(/images/bg.png);
     background-size: cover;       
     background-position: center;  
-    background-repeat: no-repeat; 
+    background-repeat: no-repeat;
 }
 
 .dashboard__intro {
-    margin-top: 25%;
+    margin-top: 20%;
 }
 
 .dashboard__search {
@@ -95,6 +94,48 @@ header img {
 
 #dashboard__button:hover {
     background-color: darkgray;
+}
+
+/* articles */
+.articles {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    padding: 16px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+    .articles__item {
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 16px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.articles__item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+}
+
+.article__title {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 8px 0;
+    line-height: 1.4;
+}
+
+.article__author {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0 0 8px 0;
+}
+
+.article__description {
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
 }
 
 /* footer.hbs */
@@ -123,6 +164,22 @@ footer {
     #dashboard__button {
         width: 12%;
     }
+
+    .articles {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        /* minmax defines the size of each column - commenting to remember bc I never used it before */
+        gap: 20px;
+        max-width: 900px;
+    }
+
+    .article__title {
+        font-size: 18px;
+    }
+
+    .article__description {
+        font-size: 16px;
+    }
 }
 
 @media screen and (min-width: 1025px) {
@@ -144,6 +201,24 @@ footer {
     
     #dashboard__button {
         width: 5%;
+    }
+
+    .articles {
+        max-width: 1200px;
+        gap: 24px;
+        padding: 24px;
+    }
+
+    .article__title {
+        font-size: 20px;
+    }
+
+    .article__author {
+        font-size: 14px;
+    }
+
+    .article__description {
+        font-size: 17px;
     }
 
     footer {
