@@ -11,7 +11,7 @@ const connectToDatabase = require("./config/db");
 const getArticle = require("./lib/api");
 const authRoutes = require("./routes/auth");
 const authenticateToken = require("./routes/authToken");
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || process.env.PORT || 3000;
 
 //------------------------------- server settings --------------------------------------- \\
 
@@ -51,6 +51,11 @@ app.get("/signup", (req, res) => {
   res.render("signup");
 });
 
+
+app.get('/login', (req, res)=>{
+  res.render('login')
+})
+
 // this actually where our search page will go
 app.get("/dashboard", (req, res) => { //JANE DID IT!!!
   res.render("dashboard");
@@ -73,12 +78,12 @@ app.get("/search", authenticateToken, async (req, res) => {
 // --------------------------------------- testing site -------------------------- \\
 
 // renders pages for login/signup
-// app.get("/login", (req, res) => {
-//   res.render("login");
-// });
-// app.get("/signup", (req, res) => {
-//   res.render("signup");
-// });
+app.get("/login", (req, res) => {
+  res.render("login");
+});
+app.get("/signup", (req, res) => {
+  res.render("signup");
+});
 
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
