@@ -5,9 +5,10 @@ const config = {
   user: process.env.MYSQLUSER,
   database: process.env.MYSQLDATABASE,
   password: process.env.MYSQLPASSWORD,
-  ssl: {
-    rejectUnauthorized: false,
-  },
+  ssl:
+    process.env.NODE_ENV === "production"
+      ? { rejectUnauthorized: false }
+      : false,
 };
 
 module.exports = config;
