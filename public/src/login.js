@@ -33,7 +33,7 @@ loginForm.addEventListener("submit", async (e) => {
     localStorage.setItem("access_token", result.access_token);
     console.log(loginMessage);
     setTimeout(() => {
-      window.location.href = "/signup";
+      window.location.href = "/dashboard";
     }, 2000);
   } else {
     alert(result.error);
