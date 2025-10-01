@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="icon" href="/images/icon.png">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <header>
+        <img src="/images/logo.png" alt="ByteSized logo">
+
+        <div class="dropdown">
+            <button class="buttons" id="dropdown__button">Hi, user!</button>
+            <div class="content">
+                <a href="" id="library">Library</a>
+                <a href="" id="logout">Log Out</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <h2 class="dashboard__intro">Begin your search here.</h2>
+        
+        <div class="dashboard__search">
+            <input class="dashboard__input" type="text" placeholder="Search topic">
+            <button class="buttons" id="dashboard__button">Search</button>
+        </div>
+
+        <section class="articles">
+        <!--<div class="articles__item">
+                <h3>Title</h3>
+                <p>Author</p>
+                <p>Description</p>
+            </div>-->
+        </section>
+    </main>
+
+    {{>footer}}
+</body>
+</html>
