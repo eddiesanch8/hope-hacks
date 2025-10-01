@@ -6,6 +6,7 @@
     <title>Dashboard</title>
     <link rel="icon" href="/images/icon.png">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="/src/dashboard.js" defer></script>
 </head>
 <body>
     <header>
@@ -23,10 +24,10 @@
     <main class="dashboard">
         <h2 class="dashboard__intro">Begin your search here.</h2>
         
-        <div class="dashboard__search">
-            <input class="dashboard__input" type="text" placeholder="Search topic">
+        <form class="dashboard__search" data-form>
+            <input class="dashboard__input" type="text" placeholder="Search topic" data-user-search>
             <button class="buttons" id="dashboard__button">Search</button>
-        </div>
+        </form>
 
         <section class="articles">
             <div class="articles__item">
