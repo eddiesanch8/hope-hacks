@@ -4,10 +4,22 @@
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(1, 1, 78);
+}
+
+body {
+  background-color: #f5f5f5;
 }
 
 /* ---------------- MAIN LOGIN PAGE ---------------- */
+
+header {
+  background-color: rgb(0, 0, 59);
+}
+
+header img {
+  max-width: 190px;
+  margin-left: 50px;
+}
 
 .login-message {
   position: fixed;
@@ -29,6 +41,7 @@
   top: 30px;
   opacity: 1;
 }
+
 /* Error Msg*/
 .login-message.showerror {
   top: 30px;
@@ -49,7 +62,7 @@ main {
 
 /* Title */
 main h1 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   margin-bottom: 25px;
   text-align: center;
   font-weight: bold;
@@ -59,7 +72,7 @@ main h1 {
 /* ---------------- LOGIN FORM ---------------- */
 .login {
   background-color: #ffffff;
-  padding: 40px 30px;
+  padding: 50px 40px;
   border-radius: 10px;
   box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
@@ -67,10 +80,14 @@ main h1 {
   text-align: center;
 }
 
+label {
+  font-size: 1.2rem;
+}
+
 /* Form fields */
 .login__form .login__input {
   width: 100%;
-  padding: 12px 14px;
+  padding: 14px 16px;
   margin-bottom: 18px;
   border: 1px solid #c9c9c9;
   border-radius: 6px;
@@ -87,12 +104,12 @@ main h1 {
 /* Submit button */
 .login__form .login__button {
   width: 100%;
-  padding: 14px;
+  padding: 15px;
   border: none;
   border-radius: 6px;
-  background-color: rgb(123, 232, 221);
+  background-color: #E6E6FA;
   color: rgb(1, 1, 78);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease, color 0.3s ease;
@@ -122,6 +139,17 @@ main h1 {
 .login__message--success {
   background-color: #d4edda;
   color: #155724;
+}
+
+/* footer.hbs */
+footer {
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 16px;
+  padding: 16px 0px;
+  border-top: 1px solid rgb(0, 0, 59);
 }
 
 /* ---------------- RESPONSIVE ---------------- */

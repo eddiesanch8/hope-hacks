@@ -1,38 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Log In - ByteSized</title>
- <link rel="stylesheet" href="/css/login.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In - ByteSized</title>
+  <link rel="stylesheet" href="/css/login.css">
   <script src="/src/login.js" defer></script>
 
 </head>
 <body>
- {{>header}}
-<div id="loginMessage" class="login-message"></div>
- <main class="main">
-   <h1 class="main__title"> Welcome Back! </h1>
-  
-   <div class="login">
-     <form class="login__form" id="loginForm">
-      <label for="email">Email</label>
-       <input class="login__input" type="email" name="email" placeholder="Email" required>
-       <label for="password">Password</label>
-       <input class="login__input" type="password" name="password" placeholder="Password" required>
-       <button class="login__button" type="submit">Log In</button>
-     </form>
+  <header>
+    <a href="/"><img src="/images/logo.png"></a>
+  </header>
+  <div id="loginMessage" class="login-message"></div>
+    <main class="main">
+      <h1 class="main__title"> Welcome Back! </h1>
+      
+      <div class="login">
+        <form class="login__form" id="loginForm">
+          <label for="email">Email</label>
+          <input class="login__input" type="email" name="email" placeholder="Email" required>
+          <label for="password">Password</label>
+          <input class="login__input" type="password" name="password" placeholder="Password" required>
+          <button class="login__button" type="submit">Log In</button>
+        </form>
 
 
-     <!-- Error or success message -->
-     <p class="login__message" id="loginMessage"></p>
-   </div>
- </main>
+        <!-- Error or success message -->
+        <p class="login__message" id="loginMessage"></p>
+      </div>
+    </main>
 
-
- {{>footer}}
-
-
+  {{>footer}}
 </body>
 </html>
 

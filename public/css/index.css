@@ -59,9 +59,6 @@ main {
     border-radius: 6px;
     cursor: pointer;
     font-size: 18px;
-    box-shadow: 0 0 5px #D7EF41, 
-                0 0 10px rgba(215, 239, 65, 0.6), 
-                0 0 15px rgba(215, 239, 65, 0.4);
 }
 
 .section__div button:hover {
@@ -74,7 +71,7 @@ main {
 }
 
 .section__about a {
-    color: #F284EE;
+    color: #E6E6FA;
     text-decoration: underline;
     cursor: pointer;
 }
