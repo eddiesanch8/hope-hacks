@@ -22,13 +22,6 @@ form.addEventListener("submit", async function (e) {
     alert("Please fill in all fields.");
     return;
   }
-  //   // --- Get values from the form ---
-  //   const firstName = form.firstName.value.trim(); // Gets the First Name, removes extra spaces
-  //   const lastName = form.lastName.value.trim(); // Gets the Last Name, removes extra spaces
-  //   const email = form.email.value.trim(); // Gets the Email, removes extra spaces
-  //   const password = form.password.value; // Gets the Password (no .trim for security)
-  //   const confirmPassword = form.confirmPassword.value; // Gets the Confirm Password field
-
   // --- Check: email format ---
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Pattern to check if email looks valid
   if (!emailPattern.test(email)) {
@@ -61,18 +54,41 @@ form.addEventListener("submit", async function (e) {
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(data),
   });
-
+  const signupMessage = document.getElementById("signupMessage"); // Get the hidden thank-you message element
   if (res.ok) {
-    // can also use classList.add('.success')
-    const thankYou = document.getElementById("thankYouMessage"); // Get the hidden thank-you message element
-    thankYou.style.display = "block"; // Make the thank-you message visible on the page
+    signupMessage.classList.toggle("show");
+    signupMessage.innerHTML = "Success!";
     setTimeout(() => {
       window.location.href = "/login";
-      thankYou.style.display = "none";
     }, 2000);
   } else {
     const { error } = await res.json();
-    alert(error);
+    signupMessage.innerHTML = `${error}`;
+    signupMessage.classList.toggle("showerror");
+    setTimeout(() => {
+      signupMessage.classList.toggle("showerror");
+      signupMessage.innerHTML = "";
+    }, 3000);
   }
   form.reset(); // Clears all form input fields so they look empty again
 });
+
+//   if (res.ok) {
+//     // can also use classList.add('.success')
+//     const signupMessage = document.getElementById("signupMessage"); // Get the hidden thank-you message element
+//     // Make the thank-you message visible on the page
+//     setTimeout(() => {
+//       signupMessage.classList.toggle("show");
+//       signupMessage.innerHTML = "";
+//       window.location.href = "/login";
+//     }, 2000);
+//   } else {
+//     const signupMessage = document.getElementById("signupMessage"); // Get the hidden thank-you message element
+//     const { error } = await res.json();
+//     signupMessage.classList.toggle("showerror");
+//     signupMessage.innerHTML = `${error}`;
+//     setTimeout(() => {
+//       signupMessage.classList.toggle("showerror");
+//       signupMessage.innerHTML = "";
+//     }, 3000);
+//   }

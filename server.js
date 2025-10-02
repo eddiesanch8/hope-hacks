@@ -51,13 +51,13 @@ app.get("/signup", (req, res) => {
   res.render("signup");
 });
 
-
-app.get('/login', (req, res)=>{
-  res.render('login')
-})
+app.get("/login", (req, res) => {
+  res.render("login");
+});
 
 // this actually where our search page will go
-app.get("/dashboard", (req, res) => { //JANE DID IT!!!
+app.get("/dashboard", (req, res) => {
+  //JANE DID IT!!!
   res.render("dashboard");
 });
 
