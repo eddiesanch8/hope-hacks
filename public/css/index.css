@@ -1,71 +1,82 @@
+/* accidentally coded desktop as default view for index.hbs */
 * {
-    color: rgb(1, 1, 78);
     margin-left: 0;
     margin-right: 0;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: rgb(0, 0, 59);
+    color: white;
 }
 
 /* header.hbs */
-header {
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid rgb(195, 194, 194);
-    box-shadow: 0 4px 6px -2px rgba(83, 82, 82, 0.287);
-}
-
 header img {
-    max-width: 185px;
-}
-
-header li {
-    list-style-type: none;
-}
-
-header button {
-    font-size: 18px;
-    padding: 8px;
-    border: none;
-}
-
-#loginBtn button {
-    background-color: transparent;
-    cursor: pointer;
-}
-
-#loginBtn button:hover {
-    text-decoration: underline;    
-}
-
-#signupBtn button {
-    border-radius: 6%;
-    background-color: rgb(123, 232, 221);
-}
-
-#signupBtn button:hover {
-    background-color: rgb(59, 112, 106);
-}
-
-header nav ul {
-    display: flex;
-    gap: 20px;
+    max-width: 190px;
+    margin-left: 50px;
 }
 
 /* index.hbs */
-#indexMainDiv {
+main {
     display: flex;
-    flex-direction: column;
-    text-align: center;
+    flex: 1;  
+    align-items: center;  
+    justify-content: center; 
+    padding: 20px;
+    gap: 8%; 
     height: 100vh;
-    background-image: url(/images/bg.png);
-    background-size: cover;       
-    background-position: center;  
-    background-repeat: no-repeat; 
-    justify-content: center;
-    align-items: center;
 }
 
-#indexP {
-    width: 95%;
+.main__img {
+    max-width: none;
+    width: 40%;
+}
+
+.section__div {
+    max-width: 650px;
+    line-height: 1.4;
+}
+
+.section__intro {
+    margin-bottom: 30px;
+}
+
+.section__message {
+    margin-bottom: 30px;
+    font-size: 20px;
+}
+
+.section__div ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin-bottom: 30px;
+    justify-content: center;
+}
+
+.section__div button {
+    padding: 10px 16px;
+    border: none;
+    background: #D7EF41;
+    color: rgb(1, 1, 55);
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 18px;
+    box-shadow: 0 0 5px #D7EF41, 
+                0 0 10px rgba(215, 239, 65, 0.6), 
+                0 0 15px rgba(215, 239, 65, 0.4);
+}
+
+.section__div button:hover {
+    background: #8d9c2a;
+}
+
+.section__about {
+    text-align: center;
+    font-size: 18px;
+}
+
+.section__about a {
+    color: #F284EE;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 /* footer.hbs */
@@ -74,43 +85,58 @@ footer {
     bottom: 0;
     left: 0;
     width: 100%;
-    border-top: 1px solid rgb(195, 194, 194);
-    font-size: 15px;
+    font-size: 16px;
+    padding-bottom: 12px;
 }
 
-/* ----- media queries for header/footer and index.hbs ------ */
-@media screen and (min-width: 768px) {
-    header {
-        justify-content: space-between;
-        padding-left: 24px;
-        padding-right: 24px;
+/* ----- media queries for tablet and mobile and index.hbs ------ */
+@media (max-width: 1024px) {
+    main {
+        flex-direction: column;   
+        align-items: center;       
+        gap: 20px;                
+        padding-bottom: 100px;
+        text-align: center;
     }
 
-    #indexH1 {
-        font-size: 34px;
+    .main__img {
+        width: 52%; 
     }
 
-    #indexP {
-        font-size: 18px;
-        max-width: 85%;
+    .section__Div {
+        max-width: 90%;   
+        text-align: center;
+    }
+
+    .section__Div ul {
+        justify-content: center;
     }
 }
 
-@media screen and (min-width: 1025px) {
-    header button {
-    font-size: 20px;
+@media (max-width: 480px) {
+    main {
+        gap: 16px;
     }
 
-    #indexH1 {
-        font-size: 48px;
+    .main__img {
+        width: 70%; 
     }
 
-    #indexP {
-        font-size: 24px;
-        max-width: 70%;
+    .section__Div h1 {
+        font-size: 1.5rem; 
     }
 
-    footer {
-        font-size: 16px;
+    .section__Div h3 {
+        font-size: 1rem;
+    }
+
+    .section__Div button {
+        width: 100%;  
+        padding: 12px;
+    }
+
+    .section__Div ul {
+        flex-direction: column; 
+        gap: 12px;
     }
 }
