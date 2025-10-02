@@ -13,6 +13,7 @@ body {
 header {
   display: flex;
   justify-content: space-around;
+  border-bottom: 1px solid white;
 }
 
 header img {
@@ -29,7 +30,7 @@ header img {
   font-size: 16px;
   border: 1px solid rgb(223, 221, 221);
   border-radius: 50px;
-  background-color: #D7EF41;
+  background-color: #E6E6FA;
   cursor: pointer;
   padding: 10px 15px;
 }
@@ -43,7 +44,7 @@ header img {
 
 .dropdown .content {
   position: absolute;
-  background-color: #D7EF41;
+  background-color: #E6E6FA;
   box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.724);
   width: 140px;
   display: none;
@@ -55,11 +56,11 @@ header img {
 }
 
 .dropdown:hover button {
-  background-color: #8d9c2a;
+  background-color: #c1c1f9;
 }
 
 .dropdown a:hover {
-  background-color: #8d9c2a;
+  background-color: #c1c1f9;
 }
 
 /* body */
@@ -92,18 +93,17 @@ header img {
   border: none;
   border-radius: 8px;
   font-size: 1rem;
-  background-color: #2a2a2a;   
-  color: white;              
+  background-color: whitesmoke;   
   outline: none;
   width: 100%;
 }
 
 .dashboard__input::placeholder {
-  color: white; 
+  color: black; 
 }
 
 .dashboard__input:focus {
-  background-color: #333;
+  background-color: whitesmoke;
   box-shadow: 0 0 8px rgba(215, 239, 65, 0.6);
 }
 
@@ -111,7 +111,7 @@ header img {
   padding: 16px 20px;
   border: none;
   border-radius: 8px;
-  background: #D7EF41;  
+  background: #E6E6FA;  
   color: rgb(0, 0, 59);
   font-weight: bold;
   cursor: pointer;
@@ -151,6 +151,7 @@ header img {
   font-weight: 600;
   margin: 0 0 8px 0;
   line-height: 1.4;
+  color: rgb(0, 0, 59);
 }
 
 .article__author {
@@ -163,6 +164,7 @@ header img {
   font-size: 15px;
   line-height: 1.5;
   margin: 0;
+  color: rgb(0, 0, 59);
 }
 
 /* footer.hbs */
@@ -172,6 +174,7 @@ footer {
   left: 0;
   width: 100%;
   font-size: 15px;
+  border-top: 1px solid white;
 }
 
 /* ----- media queries for header/footer and dashboard.hbs ------ */
