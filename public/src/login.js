@@ -28,14 +28,23 @@ loginForm.addEventListener("submit", async (e) => {
   const result = await res.json();
 
   if (res.ok) {
+    loginMessage.classList.toggle("show");
     loginMessage.innerHTML = "Login successful! Welcome back!";
     // stores JWT token and redirects user to the get: /dashboard route
     localStorage.setItem("access_token", result.access_token);
-    console.log(loginMessage);
     setTimeout(() => {
       window.location.href = "/dashboard";
     }, 2000);
+    setTimeout(() => {
+      loginMessage.classList.toggle("show");
+      loginMessage.innerHTML = "";
+    }, 4000);
   } else {
-    alert(result.error);
+    loginMessage.classList.toggle("showerror");
+    loginMessage.innerHTML = "Invalid Credentials";
+    setTimeout(() => {
+      loginMessage.classList.toggle("showerror");
+      loginMessage.innerHTML = "";
+    }, 4000);
   }
 });

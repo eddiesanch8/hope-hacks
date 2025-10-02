@@ -1,126 +1,141 @@
 /* ---------------- GLOBAL RESET ---------------- */
 * {
- box-sizing: border-box;
- margin: 0;
- padding: 0;
- font-family: Arial, Helvetica, sans-serif;
- color: rgb(1, 1, 78);
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: rgb(1, 1, 78);
 }
-
 
 /* ---------------- MAIN LOGIN PAGE ---------------- */
-main {
- min-height: 100vh;
- display: flex;
- flex-direction: column;
- justify-content: flex-start;
- align-items: center;
- background-size: cover;
- background-position: center;
- padding: 40px 20px;
+
+.login-message {
+  position: fixed;
+  top: -100px; /* Start hidden above the viewport */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 10;
 }
 
+/* Show the message */
+.login-message.show {
+  top: 30px;
+  opacity: 1;
+}
+/* Error Msg*/
+.login-message.showerror {
+  top: 30px;
+  opacity: 1;
+  background-color: #fb2b2b; /* Success green */
+}
+
+main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  padding: 40px 20px;
+}
 
 /* Title */
 main h1 {
- font-size: 2rem;
- margin-bottom: 25px;
- text-align: center;
- font-weight: bold;
- color: rgb(1, 1, 78);
+  font-size: 2rem;
+  margin-bottom: 25px;
+  text-align: center;
+  font-weight: bold;
+  color: rgb(1, 1, 78);
 }
-
 
 /* ---------------- LOGIN FORM ---------------- */
 .login {
- background-color: #ffffff;
- padding: 40px 30px;
- border-radius: 10px;
- box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
- width: 100%;
- max-width: 400px;
- text-align: center;
+  background-color: #ffffff;
+  padding: 40px 30px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
 }
-
 
 /* Form fields */
 .login__form .login__input {
- width: 100%;
- padding: 12px 14px;
- margin-bottom: 18px;
- border: 1px solid #c9c9c9;
- border-radius: 6px;
- font-size: 1rem;
- transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  padding: 12px 14px;
+  margin-bottom: 18px;
+  border: 1px solid #c9c9c9;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .login__form .login__input:focus {
- border-color: rgb(123, 232, 221);
- outline: none;
- box-shadow: 0 0 5px rgba(123, 232, 221, 0.5);
+  border-color: rgb(123, 232, 221);
+  outline: none;
+  box-shadow: 0 0 5px rgba(123, 232, 221, 0.5);
 }
-
 
 /* Submit button */
 .login__form .login__button {
- width: 100%;
- padding: 14px;
- border: none;
- border-radius: 6px;
- background-color: rgb(123, 232, 221);
- color: rgb(1, 1, 78);
- font-size: 1.1rem;
- font-weight: bold;
- cursor: pointer;
- transition: background-color 0.3s ease, color 0.3s ease;
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 6px;
+  background-color: rgb(123, 232, 221);
+  color: rgb(1, 1, 78);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 .login__form .login__button:hover {
- background-color: rgb(59, 112, 106);
- color: #fff;
+  background-color: rgb(59, 112, 106);
+  color: #fff;
 }
-
 
 /* Error or success message */
 .login__message {
- display: none;               /* hidden by default */
- margin: 20px auto 0 auto;    /* auto left/right centers it */
- background-color: #f8d7da;   /* light red for error */
- color: #721c24;              /* dark red text */
- padding: 15px;
- border-radius: 6px;
- font-size: 1rem;
- font-weight: bold;
- text-align: center;
- width: fit-content;
- max-width: 80%;              /* prevent it from stretching too wide */
+  display: none; /* hidden by default */
+  margin: 20px auto 0 auto; /* auto left/right centers it */
+  background-color: #f8d7da; /* light red for error */
+  color: #721c24; /* dark red text */
+  padding: 15px;
+  border-radius: 6px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  width: fit-content;
+  max-width: 80%; /* prevent it from stretching too wide */
 }
-
 
 /* You can add a success modifier if needed */
 .login__message--success {
- background-color: #d4edda;  
- color: #155724;             
+  background-color: #d4edda;
+  color: #155724;
 }
-
 
 /* ---------------- RESPONSIVE ---------------- */
 @media screen and (min-width: 768px) {
- main h1 {
-   font-size: 2.4rem;
- }
- .login {
-   padding: 50px 40px;
- }
+  main h1 {
+    font-size: 2.4rem;
+  }
+  .login {
+    padding: 50px 40px;
+  }
 }
-
 
 @media screen and (min-width: 1024px) {
- main h1 {
-   font-size: 2.8rem;
- }
+  main h1 {
+    font-size: 2.8rem;
+  }
 }
-
-
