@@ -42,8 +42,10 @@ hbs.registerPartials(path.join(__dirname, "views/partials")); //JANE DID IT!!!!
 
 app.get("/", (req, res) => {
   res.render("index", {
-    intro: "Stay ahead in the fast-moving world of AI and technology with ByteSized, your personal weekly tech digest!",
-    message: "Curated research, breakthroughs, and industry insights delivered weekly all in one place. Stay smart. Stay updated. Stay ahead."
+    intro:
+      "Stay ahead in the fast-moving world of AI and technology with ByteSized, your personal weekly tech digest!",
+    message:
+      "Curated research, breakthroughs, and industry insights delivered weekly all in one place. Stay smart. Stay updated. Stay ahead.",
   });
 });
 
@@ -74,17 +76,6 @@ app.get("/search", authenticateToken, async (req, res) => {
     console.error(err);
   }
 });
-
-// --------------------------------------- testing site -------------------------- \\
-
-// renders pages for login/signup
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-app.get("/signup", (req, res) => {
-  res.render("signup");
-});
-
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
