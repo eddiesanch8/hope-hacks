@@ -7,10 +7,10 @@ const userForm = document.querySelector("[data-form]");
 const logoutBtn = document.querySelector("#logout");
 const articles = document.querySelector("[data-article-container]");
 // --------------------------- Declaring Functions ---------------------------------------- \\
-
+// empty out the parent container
 function createArticle(obj) {
   // Creates new section and gets Parent Grid
-  const parentContainer = document.querySelector("[data-article-container]");
+  const articleContainer = document.querySelector("[data-article-container]");
   const newSection = document.createElement("article");
   newSection.classList.add("articles__item");
   // Inner html for every section
@@ -25,7 +25,7 @@ function createArticle(obj) {
         `;
   newSection.innerHTML = article;
   // add to parent grid
-  parentContainer.append(newSection);
+  articleContainer.append(newSection);
 }
 
 // es6 js allows us to create async functions which are great for handling api calls
@@ -49,10 +49,7 @@ async function getSearch(search) {
     }
     // the data for right now is just a string which you pass into the function but it is returned as json
     const data = await response.json();
-    console.log(data);
-    data.forEach((article) => {
-      createArticle(article);
-    });
+    data.forEach(createArticle);
     // from there we can dynamically use whatever data is pulled
   } catch (error) {
     console.error("Error fetching search data:", error);
@@ -69,6 +66,10 @@ userForm.addEventListener("submit", (e) => {
     alert("Please provide a search");
     return;
   }
+  const articleContainer = document.querySelector("[data-article-container]");
+  if (articleContainer.hasChildNodes()) {
+    articleContainer.replaceChildren();
+  }
   // then calling on the previously defined function
   getSearch(searchTerm);
 });
@@ -77,5 +78,5 @@ userForm.addEventListener("submit", (e) => {
 logoutBtn.addEventListener("click", () => {
   localStorage.removeItem("access_token");
   localStorage.clear();
-  window.location.href = "/login";
+  window.location.href = "/";
 });
