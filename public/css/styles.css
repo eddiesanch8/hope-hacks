@@ -1,15 +1,54 @@
 /* ---------------- GLOBAL RESET ---------------- */
-/* Signup css 
+/* Signup css
 /* signup.hbs styles */
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: Arial, Helvetica, sans-serif;
-  color: rgb(1, 1, 78);
-} 
+}
+
+body {
+  background-color: #f5f5f5;
+}
 
 /* ---------------- MAIN SIGNUP PAGE ---------------- */
+header {
+  background-color: rgb(0, 0, 59);
+}
+
+header img {
+  max-width: 190px;
+  margin-left: 50px;
+}
+
+.signup-message {
+  position: fixed;
+  top: -100px; /* Start hidden above the viewport */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4caf50;
+  color: white;
+  padding: 16px 32px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transition: all 0.6s ease;
+  z-index: 9999;
+}
+
+/* Show the message */
+.signup-message.show {
+  top: 30px;
+  opacity: 1;
+}
+/* Error Msg*/
+.signup-message.showerror {
+  top: 30px;
+  opacity: 1;
+  background-color: #fb2b2b; /* Success green */
+}
+
 main {
   min-height: 100vh;
   display: flex;
@@ -27,7 +66,6 @@ main h1 {
   margin-bottom: 25px;
   text-align: center;
   font-weight: bold;
-  color: rgb(1, 1, 78);
 }
 
 /* ---------------- SIGNUP FORM ---------------- */
@@ -35,7 +73,7 @@ main h1 {
   background-color: #ffffff;
   padding: 40px 30px;
   border-radius: 10px;
-  box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+  box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
   width: 100%;
   max-width: 400px;
   text-align: center;
@@ -64,8 +102,7 @@ main h1 {
   padding: 14px;
   border: none;
   border-radius: 6px;
-  background-color: rgb(123, 232, 221);
-  color: rgb(1, 1, 78);
+  background-color: #E6E6FA;
   font-size: 1.1rem;
   font-weight: bold;
   cursor: pointer;
@@ -73,22 +110,32 @@ main h1 {
 }
 
 #signupForm button:hover {
-  background-color: rgb(59, 112, 106);
+  background-color: #c1c1f9;
   color: #fff;
 }
 
 #thankYouMessage {
-  display: none;               /* hidden by default */
-  margin: 20px auto 0 auto;    /* auto left/right centers it */
-  background-color: #d4edda;   
-  color: #155724;              /* dark green text */
+  display: none; /* hidden by default */
+  margin: 20px auto 0 auto; /* auto left/right centers it */
+  background-color: #d4edda;
+  color: #155724; /* dark green text */
   padding: 15px;
   border-radius: 6px;
   font-size: 1rem;
   font-weight: bold;
-  text-align: center;          
-  width: fit-content;         
-  max-width: 80%;              /* prevent it from stretching too wide */
+  text-align: center;
+  width: fit-content;
+  max-width: 80%; /* prevent it from stretching too wide */
+}
+
+footer {
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 16px;
+  padding: 16px 0px;
+  border-top: 1px solid rgb(0, 0, 59);
 }
 
 /* ---------------- RESPONSIVE ---------------- */

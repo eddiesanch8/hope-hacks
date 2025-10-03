@@ -6,7 +6,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  background-color: #f5f5f5;
+}
+
 /* ---------------- MAIN LOGIN PAGE ---------------- */
+
 header {
   background-color: rgb(0, 0, 59);
 }
