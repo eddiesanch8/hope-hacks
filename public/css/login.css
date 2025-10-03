@@ -6,12 +6,7 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-body {
-  background-color: #f5f5f5;
-}
-
 /* ---------------- MAIN LOGIN PAGE ---------------- */
-
 header {
   background-color: rgb(0, 0, 59);
 }
@@ -19,6 +14,10 @@ header {
 header img {
   max-width: 190px;
   margin-left: 50px;
+}
+
+header img:hover {
+  cursor: pointer;
 }
 
 .login-message {
@@ -57,7 +56,8 @@ main {
   align-items: center;
   background-size: cover;
   background-position: center;
-  padding: 40px 20px;
+  padding: 70px 20px;
+  background-color: rgb(0, 0, 59);
 }
 
 /* Title */
@@ -66,7 +66,7 @@ main h1 {
   margin-bottom: 25px;
   text-align: center;
   font-weight: bold;
-  color: rgb(1, 1, 78);
+  color: white;
 }
 
 /* ---------------- LOGIN FORM ---------------- */
@@ -150,6 +150,8 @@ footer {
   font-size: 16px;
   padding: 16px 0px;
   border-top: 1px solid rgb(0, 0, 59);
+  background-color: rgb(0, 0, 59);
+  color: white;
 }
 
 /* ---------------- RESPONSIVE ---------------- */

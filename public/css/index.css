@@ -13,6 +13,10 @@ header img {
     margin-left: 50px;
 }
 
+header img:hover {
+    cursor: pointer;
+}
+
 /* index.hbs */
 main {
     display: flex;

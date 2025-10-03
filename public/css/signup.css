@@ -22,6 +22,10 @@ header img {
   margin-left: 50px;
 }
 
+header img:hover {
+  cursor: pointer;
+}
+
 .signup-message {
   position: fixed;
   top: -100px; /* Start hidden above the viewport */
@@ -57,7 +61,8 @@ main {
   align-items: center;
   background-size: cover;
   background-position: center;
-  padding: 40px 20px;
+  padding: 70px 20px;
+  background-color: rgb(0, 0, 59);
 }
 
 /* Title */
@@ -66,6 +71,7 @@ main h1 {
   margin-bottom: 25px;
   text-align: center;
   font-weight: bold;
+  color: white;
 }
 
 /* ---------------- SIGNUP FORM ---------------- */
@@ -135,7 +141,8 @@ footer {
   width: 100%;
   font-size: 16px;
   padding: 16px 0px;
-  border-top: 1px solid rgb(0, 0, 59);
+  background-color: rgb(0, 0, 59);
+  color: white;
 }
 
 /* ---------------- RESPONSIVE ---------------- */
