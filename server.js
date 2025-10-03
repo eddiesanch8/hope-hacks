@@ -42,8 +42,10 @@ hbs.registerPartials(path.join(__dirname, "views/partials")); //JANE DID IT!!!!
 
 app.get("/", (req, res) => {
   res.render("index", {
-    intro: "Welcome to ByteSized!",
-    message: "Your new favorite personal newsletter that connects tech professionals, students, and AI enthusiasts with curated news and research on artificial intelligence, making it easy to stay informed about the latest trends, breakthroughs, and applications."
+    intro:
+      "Stay ahead in the fast-moving world of AI and technology with ByteSized, your personal weekly tech digest!",
+    message:
+      "Curated research, breakthroughs, and industry insights delivered weekly all in one place. Stay smart. Stay updated. Stay ahead.",
   });
 });
 
@@ -51,13 +53,13 @@ app.get("/signup", (req, res) => {
   res.render("signup"); // Helena
 });
 
-
-app.get('/login', (req, res)=>{
-  res.render('login') // HELENA
-})
+app.get("/login", (req, res) => {
+  res.render("login");
+});
 
 // this actually where our search page will go
-app.get("/dashboard", (req, res) => { //JANE DID IT!!!
+app.get("/dashboard", (req, res) => {
+  //JANE DID IT!!!
   res.render("dashboard");
 });
 
@@ -78,18 +80,6 @@ app.get("/search", authenticateToken, async (req, res) => {
     console.error(err);
   }
 });
-
-// --------------------------------------- testing site -------------------------- \\
-
-// renders pages for login/signup
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-app.get("/signup", (req, res) => {
-  res.render("signup");
-});
-
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });

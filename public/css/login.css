@@ -21,6 +21,10 @@ header img {
   margin-left: 50px;
 }
 
+header img:hover {
+  cursor: pointer;
+}
+
 .login-message {
   position: fixed;
   top: -100px; /* Start hidden above the viewport */
@@ -57,7 +61,8 @@ main {
   align-items: center;
   background-size: cover;
   background-position: center;
-  padding: 40px 20px;
+  padding: 70px 20px;
+  background-color: rgb(0, 0, 59);
 }
 
 /* Title */
@@ -66,7 +71,7 @@ main h1 {
   margin-bottom: 25px;
   text-align: center;
   font-weight: bold;
-
+  color: white;
 }
 
 /* ---------------- LOGIN FORM ---------------- */
@@ -116,7 +121,7 @@ label {
 }
 
 .login__form .login__button:hover {
-  background-color: rgb(59, 112, 106);
+  background-color: #c1c1f9;
   color: #fff;
 }
 
@@ -150,6 +155,8 @@ footer {
   font-size: 16px;
   padding: 16px 0px;
   border-top: 1px solid rgb(0, 0, 59);
+  background-color: rgb(0, 0, 59);
+  color: white;
 }
 
 /* ---------------- RESPONSIVE ---------------- */
@@ -167,4 +174,3 @@ footer {
     font-size: 2.8rem;
   }
 }
-

@@ -6,34 +6,28 @@
     <title>Dashboard</title>
     <link rel="icon" href="/images/icon.png">
     <link rel="stylesheet" href="../css/dashboard.css">
+    <script src="/src/dashboard.js" defer></script>
 </head>
 <body>
     <header>
-        <img src="/images/logo.png" alt="ByteSized logo">
+        <a href="/"><img src="/images/logo.png" alt="ByteSized logo"></a>
 
         <div class="dropdown">
             <button class="buttons" id="dropdown__button">Hi, user!</button>
             <div class="content">
-                <a href="" id="library">Library</a>
+                <a href="" id="about">About</a>
                 <a href="" id="logout">Log Out</a>
             </div>
         </div>
     </header>
 
     <main class="dashboard">
-        <h2 class="dashboard__intro">Begin your search here.</h2>
-        
-        <div class="dashboard__search">
-            <input class="dashboard__input" type="text" placeholder="Search topic">
+        <form class="dashboard__search" data-form>
+            <input class="dashboard__input" type="text" placeholder="Search topic" data-user-search>
             <button class="buttons" id="dashboard__button">Search</button>
-        </div>
+        </form>
 
-        <section class="articles">
-        <!--<div class="articles__item">
-                <h3>Title</h3>
-                <p>Author</p>
-                <p>Description</p>
-            </div>-->
+        <section class="articles" data-article-container>
         </section>
     </main>
 

@@ -22,6 +22,10 @@ header img {
   margin-left: 50px;
 }
 
+header img:hover {
+  cursor: pointer;
+}
+
 .signup-message {
   position: fixed;
   top: -100px; /* Start hidden above the viewport */

@@ -1,152 +1,250 @@
 * {
-    color: rgb(1, 1, 78);
-    margin-left: 0;
-    margin-right: 0;
-    font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+body{
+  background-color: #f5f5f5;
 }
 
 /* header */
 header {
-    display: flex;
-    justify-content: space-around;
-    border-bottom: 1px solid rgb(195, 194, 194);
-    box-shadow: 0 4px 6px -2px rgba(83, 82, 82, 0.287);
+  display: flex;
+  justify-content: space-around;
+  border-bottom: 1px solid white;
+  background-color: rgb(0, 0, 59);
+  box-shadow: 0 4px 6px -2px rgba(83, 82, 82, 0.287);
 }
 
 header img {
-    max-width: 185px;
+  max-width: 190px;
+  margin-left: 50px;
 }
 
 .dropdown {
-    margin-top: 14px;
+  margin-top: 34px;
+  margin-right: 50px;
 }
 
 .dropdown button {
-    font-size: 16px;
-    border: 2px solid rgb(223, 221, 221);
-    border-radius: 50px;
-    background-color: transparent;
-    cursor: pointer;
-    padding: 10px 15px;
+  font-size: 16px;
+  border: 1px solid rgb(223, 221, 221);
+  border-radius: 50px;
+  background-color: #E6E6FA;
+  cursor: pointer;
+  padding: 10px 15px;
 }
 
 .dropdown a {
-    display: block;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-size: 16px;
-    border: 1px solid rgb(205, 203, 203);
+  display: block;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 16px;
 }
 
 .dropdown .content {
-    position: absolute;
-    background-color: rgb(239, 236, 236);
-    box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.724);
-    min-width: 100px;
-    display: none;
-    margin-top: 14px;
+  position: absolute;
+  background-color: #E6E6FA;
+  box-shadow: 2px 2px 5px rgba(128, 128, 128, 0.724);
+  width: 140px;
+  display: none;
+  margin-top: 14px;
 }
 
 .dropdown:hover .content {
-    display: block;
+  display: block;
 }
 
 .dropdown:hover button {
-    background-color: rgb(239, 236, 236);
+  background-color: #c1c1f9;
 }
 
 .dropdown a:hover {
-    background-color: rgb(137, 136, 136);
-    color: white;
+  background-color: #c1c1f9;
 }
 
 /* body */
 .dashboard {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    align-items: center;
-    background-image: url(/images/bg.png);
-    background-size: cover;       
-    background-position: center;  
-    background-repeat: no-repeat; 
-}
-
-.dashboard__intro {
-    margin-top: 25%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  background-image: url(/images/bg.png);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding-top: 4%;
 }
 
 .dashboard__search {
-    width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 20px auto;
+  max-width: 600px;
+  width: 100%;
 }
 
 .dashboard__input {
-    padding: 10px;
-    width: 50%;
-    font-size: 16px;
+  flex: 1;
+  padding: 16px 20px;
+  border: 1px solid lightgrey;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  width: 100%;
+}
+
+.dashboard__input::placeholder {
+  color: black; 
 }
 
 #dashboard__button {
-    padding: 10px;
-    width: 20%;
-    font-size: 16px;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 8px;
+  background: #E6E6FA;  
+  color: rgb(0, 0, 59);
+  font-weight: bold;
+  cursor: pointer;
+  min-width: 15%;
 }
 
-#dashboard__button:hover {
-    background-color: darkgray;
+/* articles */
+.articles {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 16px;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.articles__item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.articles__item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.article__img {
+  width: 100%;
+  height: auto;
+}
+
+.article__title {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0 0 8px 0;
+  line-height: 1.4;
+  color: rgb(0, 0, 59);
+}
+
+.article__author {
+  font-size: 12px;
+  color: #6b7280;
+  margin: 0 0 8px 0;
+}
+
+.article__description {
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  color: rgb(0, 0, 59);
 }
 
 /* footer.hbs */
 footer {
-    text-align: center;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-top: 1px solid rgb(195, 194, 194);
-    font-size: 15px;
+  text-align: center;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  font-size: 15px;
+  border-top: 1px solid rgb(0, 0, 59);
+  padding: 16px 0px;
 }
-
 
 /* ----- media queries for header/footer and dashboard.hbs ------ */
 @media screen and (min-width: 768px) {
-    header {
-        justify-content: space-between;
-        padding-left: 24px;
-        padding-right: 24px;
-    }
+  header {
+    justify-content: space-between;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
 
-    .dashboard__input {
-        width: 40%;
-    }  
-    
-    #dashboard__button {
-        width: 12%;
-    }
+  .dashboard__input {
+    width: 40%;
+  }
+
+  #dashboard__button {
+    width: 12%;
+  }
+
+  .articles {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    /* minmax defines the size of each column - commenting to remember bc I never used it before */
+    gap: 20px;
+    max-width: 900px;
+  }
+
+  .article__title {
+    font-size: 18px;
+  }
+
+  .article__description {
+    font-size: 16px;
+  }
 }
 
 @media screen and (min-width: 1025px) {
-    header button {
+  header button {
     font-size: 20px;
-    }
+  }
 
-    .dropdown button {
-        font-size: 18px;
-    }
+  .dropdown button {
+    font-size: 18px;
+  }
 
-    .dashboard__input {
-        width: 20%;
-    } 
-    
-    .dashboard__intro {
-        margin-top: 12%;
-    }
-    
-    #dashboard__button {
-        width: 5%;
-    }
+  .dashboard__input {
+    width: 20%;
+  }
 
-    footer {
-        font-size: 16px;
-    }
+  .dashboard__intro {
+    margin-top: 12%;
+  }
+
+  #dashboard__button {
+    width: 5%;
+  }
+
+  .articles {
+    max-width: 1200px;
+    gap: 24px;
+    padding: 24px;
+  }
+
+  .article__title {
+    font-size: 20px;
+  }
+
+  .article__author {
+    font-size: 14px;
+  }
+
+  .article__description {
+    font-size: 17px;
+  }
+
+  footer {
+    font-size: 16px;
+  }
 }
