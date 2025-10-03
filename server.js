@@ -11,7 +11,7 @@ const connectToDatabase = require("./config/db");
 const getArticle = require("./lib/api");
 const authRoutes = require("./routes/auth");
 const authenticateToken = require("./routes/authToken");
-const PORT = process.env.PORT || process.env.PORT || 3000;
+const PORT = process.env.PORT || process.env.PORT || 8000;
 
 //------------------------------- server settings --------------------------------------- \\
 
@@ -48,17 +48,21 @@ app.get("/", (req, res) => {
 });
 
 app.get("/signup", (req, res) => {
-  res.render("signup");
+  res.render("signup"); // Helena
 });
 
 
 app.get('/login', (req, res)=>{
-  res.render('login')
+  res.render('login') // HELENA
 })
 
 // this actually where our search page will go
 app.get("/dashboard", (req, res) => { //JANE DID IT!!!
   res.render("dashboard");
+});
+
+app.get("/aboutus", (req, res) => {
+  res.render("aboutus"); // HELENA 
 });
 
 // this is where our API fetch will happen, it is our exposed endpoint...
@@ -81,6 +85,7 @@ app.get("/search", authenticateToken, async (req, res) => {
 app.get("/login", (req, res) => {
   res.render("login");
 });
+
 app.get("/signup", (req, res) => {
   res.render("signup");
 });
@@ -88,3 +93,4 @@ app.get("/signup", (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server listening on ${PORT}`);
 });
+

@@ -1,0 +1,475 @@
+/* ---------------- GLOBAL RESET ---------------- */
+* { /* Selects all elements on the page */
+  box-sizing: border-box; /* Include padding and border in element's width/height */
+  margin: 0; /* Remove default margin from all elements */
+  padding: 0; /* Remove default padding from all elements */
+  font-family: Arial, Helvetica, sans-serif; /* Set default font */
+}
+
+body { /* Styles for the main page body */
+  background-color: rgb(0, 0, 59); /* Dark blue background color */
+  color: white; /* Default text color */
+  line-height: 1.6; /* Space between lines for readability */
+
+}
+
+/* ---------------- HERO SECTION ---------------- */
+.hero { /* The top section, often a banner or intro */
+  text-align: center; /* Center all text horizontally */
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Top border for separation */
+  padding: 100px 20px 80px; /* Top 100px, sides 20px, bottom 80px spacing */
+  background-color: rgb(0, 0, 59); /* Same dark blue as body */
+  max-width: 900px; /* Limit width so text doesn't stretch too wide */
+  margin: 0 auto; /* Center section horizontally */
+}
+
+.hero p { /* Paragraph text inside the hero section */
+  font-size: 1.5rem; /* Large font for emphasis */
+  line-height: 1.8; /* Space between lines for readability */
+  color: rgba(255, 255, 255, 0.95); /* Almost solid white */
+  font-weight: 300; /* Light font weight for elegance */
+}
+
+/* ---------------- STATS BANNER ---------------- */
+.stats-banner { /* Section to show statistics or numbers */
+  padding: 80px 20px; /* Vertical and horizontal spacing */
+  border-top: 1px solid rgba(215, 239, 65, 0.2); /* Subtle top border */
+  border-bottom: 1px solid rgba(215, 239, 65, 0.2); /* Subtle bottom border */
+}
+
+.stats-grid { /* Container for multiple stats in a grid */
+  display: grid; /* Enables grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Columns adjust to fit screen size */
+  gap: 50px; /* Space between each stat box */
+  text-align: center; /* Center text inside each stat */
+  max-width: 1200px; /* Limit total width */
+  margin: 0 auto; /* Center grid horizontally */
+}
+
+.stat-item { /* Individual stat box */
+  padding: 0; /* Remove default padding */
+  background-color: transparent; /* Make background invisible */
+}
+
+.stat-number { /* The number itself */
+  display: block; /* Forces the number to be on its own line */
+  font-size: 3.5rem; /* Large number */
+  font-weight: 700; /* Bold number */
+  color: #D7EF41; /* Bright yellow-green color */
+  margin-bottom: 12px; /* Space below the number */
+  letter-spacing: -1px; /* Slightly tighten letters */
+  background-color: transparent; /* Keep background transparent */
+}
+
+.stat-item span:last-child { /* Label under the number */
+  display: block; /* Put on its own line */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.85); /* Slightly faded white text */
+  font-size: 1rem; /* Normal size text */
+  line-height: 1.5; /* Space between lines */
+}
+
+/* ---------------- PROBLEM & SOLUTION ---------------- */
+.problem-solution { /* Section for problem and solution text */
+  display: grid; /* Use grid layout */
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 60px; /* Space between columns */
+  padding: 100px 40px; /* Internal spacing */
+  background-color: rgb(0, 0, 59); /* Dark blue background */
+  max-width: 1200px; /* Limit width for readability */
+  margin: 0 auto; /* Center section horizontally */
+}
+
+.problem, .solution { /* Both problem and solution boxes */
+  background-color: transparent; /* Keep background invisible */
+}
+
+.problem h2, .solution h2 { /* Headings for problem & solution */
+  color: #D7EF41; /* Yellow-green text */
+  margin-bottom: 20px; /* Space below heading */
+  background-color: transparent; /* Transparent background */
+  font-size: 1.8rem; /* Medium-large font size */
+  font-weight: 600; /* Semi-bold */
+}
+
+.problem p, .solution p { /* Paragraph text in problem & solution */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.9); /* Almost white text */
+  font-size: 1.1rem; /* Slightly larger than normal text */
+  line-height: 1.8; /* Comfortable line spacing */
+}
+
+/* ---------------- SECTION HEADERS ---------------- */
+.audience h2, .features h2, .education h2, .subscribers h2 { /* All main section titles */
+  font-size: 2.5rem; /* Large font for emphasis */
+  margin-bottom: 60px; /* Space below title */
+  color: #D7EF41; /* Yellow-green */
+  background-color: transparent; /* Transparent background */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: -0.5px; /* Slightly tighten letters */
+}
+
+/* ---------------- AUDIENCE SECTION ---------------- */
+.audience { /* Section introducing target audience */
+  text-align: center; /* Center all content */
+  padding: 100px 40px; /* Spacing around content */
+  background-color: rgb(0, 0, 59); /* Dark background */
+  max-width: 1200px; /* Limit width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.audience-grid { /* Grid for audience cards */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  gap: 30px; /* Space between cards */
+}
+
+/* ---------------- CARD STYLES ---------------- */
+.card { /* Individual card */
+  padding: 40px 30px; /* Internal spacing */
+  border-radius: 12px; /* Rounded corners */
+  background: rgba(255, 255, 255, 0.03); /* Slightly visible card */
+  border: 1px solid rgba(255, 255, 255, 0.08); /* Thin border */
+  transition: all 0.3s ease; /* Smooth hover animation */
+  text-align: left; /* Align text to the left */
+}
+
+/* Hover effect only for cards in subscribers section */
+.subscribers .card:hover {
+  background: rgba(255, 255, 255, 0.06); /* Slightly brighter background */
+  border-color: rgba(215, 239, 65, 0.3); /* Change border color */
+  transform: translateY(-4px); /* Move card up slightly */
+}
+
+.card h3 { /* Card title */
+  background-color: transparent; /* Transparent background */
+  color: #D7EF41; /* Yellow-green text */
+  margin-bottom: 16px; /* Space below heading */
+  font-size: 1.4rem; /* Medium-large font */
+  font-weight: 600; /* Semi-bold */
+}
+
+.card p { /* Card paragraph */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.85); /* Slightly faded white */
+  font-size: 1.05rem; /* Normal text size */
+  line-height: 1.7; /* Spacing between lines */
+}
+
+.card ul { /* Card list */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.85); /* Faded white text */
+  list-style: none; /* Remove default bullets */
+  padding: 0; /* Remove default padding */
+}
+
+.card li { /* Individual list item */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.85); /* Faded white text */
+  padding-left: 24px; /* Space for arrow */
+  position: relative; /* For arrow positioning */
+  margin-bottom: 12px; /* Space between items */
+  line-height: 1.6; /* Line spacing */
+}
+
+.card li:before { /* Arrow before each list item */
+  content: "→"; /* Arrow symbol */
+  position: absolute; /* Position on the left */
+  left: 0; /* Align left */
+  color: #D7EF41; /* Yellow-green color */
+  font-weight: bold; /* Bold arrow */
+}
+/* ---------------- FEATURES ---------------- */
+.features { /* Section for features */
+  padding: 100px 40px; /* Internal spacing */
+  text-align: center; /* Center content */
+  background-color: rgba(215, 239, 65, 0.04); /* Light yellow overlay */
+  border-top: 1px solid rgba(215, 239, 65, 0.1); /* Top border */
+  border-bottom: 1px solid rgba(215, 239, 65, 0.1); /* Bottom border */
+}
+
+.features-grid { /* Grid for feature boxes */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  gap: 30px; /* Space between features */
+  max-width: 1200px; /* Limit width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.feature { /* Individual feature box */
+  padding: 40px 30px; /* Internal spacing */
+  border-left: 3px solid #F284EE; /* Left accent line */
+  background: rgba(255, 255, 255, 0.03); /* Slightly visible background */
+  border-radius: 8px; /* Rounded corners */
+  transition: all 0.3s ease; /* Smooth animation */
+  text-align: left; /* Left aligned text */
+}
+
+/* REMOVED HOVER EFFECT FOR .feature */
+
+.feature h3 { /* Feature title */
+  background-color: transparent; /* Transparent background */
+  color: #D7EF41; /* Yellow-green text */
+  margin-bottom: 12px; /* Space below title */
+  font-size: 1.3rem; /* Medium font size */
+  font-weight: 600; /* Semi-bold */
+}
+
+.feature p { /* Feature paragraph */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.85); /* Slightly faded white */
+  font-size: 1.05rem; /* Normal text size */
+}
+
+/* ---------------- EDUCATION SECTION ---------------- */
+.education { /* Section for learning content */
+  padding: 100px 40px; /* Internal spacing */
+  text-align: center; /* Center content */
+  background-color: rgb(0, 0, 59); /* Dark blue background */
+  max-width: 1200px; /* Limit width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.education > p { /* Paragraph directly under education heading */
+  font-size: 1.2rem; /* Slightly larger text */
+  max-width: 700px; /* Limit width for readability */
+  margin: 0 auto 60px; /* Center horizontally with space below */
+  line-height: 1.8; /* Line spacing */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.9); /* Almost white text */
+}
+
+.education-grid { /* Grid for education cards */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); /* Responsive columns */
+  gap: 30px; /* Space between cards */
+}
+
+/* ---------------- CALL TO ACTION ---------------- */
+.cta { /* Section with a main action button */
+  text-align: center; /* Center content */
+  padding: 120px 40px; /* Internal spacing */
+  background: linear-gradient(180deg, rgb(0, 0, 59) 0%, rgba(1, 1, 78, 0.9) 100%); /* Gradient background */
+}
+
+.cta h2 { /* CTA heading */
+  font-size: 2.8rem; /* Large font size */
+  margin-bottom: 20px; /* Space below heading */
+  color: #D7EF41; /* Yellow-green text */
+  background-color: transparent; /* Transparent background */
+  font-weight: 600; /* Semi-bold */
+  letter-spacing: -0.5px; /* Slightly tighter letters */
+}
+
+.cta p { /* CTA paragraph */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.9); /* Almost white text */
+  margin-bottom: 40px; /* Space below paragraph */
+  font-size: 1.2rem; /* Slightly larger font */
+  max-width: 600px; /* Limit width */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+.cta a, .link-cta-signup { /* CTA buttons or links - HOVER KEPT */
+  display: inline-block; /* Allows padding and width */
+  margin-top: 20px; /* Space above button */
+  padding: 18px 48px; /* Internal spacing */
+  border-radius: 8px; /* Rounded corners */
+  background: #D7EF41; /* Yellow-green background */
+  color: rgb(0, 0, 59); /* Dark blue text */
+  font-size: 1.1rem; /* Slightly larger font */
+  font-weight: 600; /* Semi-bold */
+  text-decoration: none; /* Remove underline */
+  transition: all 0.3s ease; /* Smooth hover animation */
+  box-shadow: 0 4px 20px rgba(215, 239, 65, 0.3); /* Soft shadow */
+}
+
+.cta a:hover, .link-cta-signup:hover { /* Hover effect for CTA buttons - KEPT */
+  background: #e8f76d; /* Lighter yellow background */
+  transform: translateY(-2px); /* Slight lift effect */
+  box-shadow: 0 6px 30px rgba(215, 239, 65, 0.5); /* Stronger shadow */
+}
+
+/* ---------------- SUBSCRIBERS ---------------- */
+.subscribers { /* Section for logos or subscriber info */
+  padding: 100px 40px; /* Internal spacing */
+  background-color: rgb(0, 0, 59); /* Dark blue background */
+  max-width: 1400px; /* Limit width */
+  margin: 0 auto; /* Center horizontally */
+}
+
+.subscribers h2 { /* Section heading */
+  text-align: center; /* Center title */
+}
+
+.subscribers > p { /* Paragraph below heading */
+  text-align: center; /* Center text */
+  margin-bottom: 60px; /* Space below */
+  background-color: transparent; /* Transparent background */
+  color: rgba(255, 255, 255, 0.9); /* Almost white */
+  font-size: 1.2rem; /* Slightly larger font */
+  max-width: 700px; /* Limit width */
+  margin-left: auto; /* Center horizontally */
+  margin-right: auto; /* Center horizontally */
+}
+
+.subscribers-grid { /* Grid for logos or images */
+  display: grid; /* Grid layout */
+  grid-template-columns: repeat(4, 1fr); /* Four equal columns */
+  gap: 24px; /* Space between grid items */
+}
+
+/* ---------------- FOOTER ---------------- */
+footer { /* Page footer */
+  text-align: center; /* Center text */
+  width: 100%; /* Full width */
+  font-size: 0.95rem; /* Slightly smaller text */
+  padding: 40px 20px; /* Internal spacing */
+  background-color: rgb(0, 0, 59); /* Dark blue background */
+  color: rgba(255, 255, 255, 0.6); /* Faded white text */
+  border-top: 1px solid rgba(255, 255, 255, 0.5); /* Top border for separation */
+  margin-top: 40px; /* Space above footer */
+}
+
+/* ---------------- RESPONSIVE DESIGN ---------------- */
+/* Large tablets and small desktops */
+@media (max-width: 1024px) {
+  .subscribers-grid { /* Change subscriber grid */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 20px; /* Smaller gap */
+  }
+
+  .problem-solution { /* Problem and solution layout */
+    gap: 40px; /* Reduce gap */
+    padding: 80px 30px; /* Smaller padding */
+  }
+
+  .features-grid, .audience-grid, .education-grid { /* Grids for sections */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 24px; /* Smaller gap */
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .problem-solution { /* Problem and solution */
+    grid-template-columns: 1fr; /* One column */
+    gap: 40px; /* Gap between boxes */
+    padding: 60px 20px; /* Smaller padding */
+  }
+
+  .hero { /* Hero section adjustments */
+    padding: 60px 20px 50px; /* Smaller spacing */
+  }
+
+  .hero p { /* Hero text */
+    font-size: 1.2rem; /* Smaller font */
+  }
+
+  .stat-number { /* Stats number */
+    font-size: 2.5rem; /* Smaller size */
+  }
+
+  .stats-banner { /* Stats section */
+    padding: 60px 20px; /* Smaller padding */
+  }
+
+  .stats-grid { /* Stats grid */
+    gap: 40px; /* Smaller gap */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+
+  .audience, .features, .education, .subscribers { /* Section adjustments */
+    padding: 60px 20px; /* Smaller padding */
+  }
+
+  .audience h2, .features h2, .education h2, .subscribers h2 { /* Section titles */
+    font-size: 2rem; /* Smaller size */
+    margin-bottom: 40px; /* Smaller space */
+  }
+
+  .cta { /* Call to action */
+    padding: 80px 20px; /* Smaller padding */
+  }
+
+  .cta h2 { /* CTA title */
+    font-size: 2rem; /* Smaller font */
+  }
+
+  .cta a, .link-cta-signup { /* CTA buttons */
+    width: 100%; /* Full width */
+    max-width: 300px; /* Limit width */
+  }
+
+  .card { /* Card style */
+    padding: 30px 24px; /* Smaller padding */
+  }
+
+  .subscribers-grid { /* Subscriber logos */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 480px) {
+  .hero p { /* Hero text */
+    font-size: 1.1rem; /* Smaller font */
+  }
+
+  .stat-number { /* Stat number */
+    font-size: 2rem; /* Smaller size */
+  }
+
+  .stats-grid { /* Stats grid */
+    grid-template-columns: 1fr; /* Single column */
+    gap: 30px; /* Smaller gap */
+  }
+
+  .problem h2, .solution h2 { /* Problem & solution titles */
+    font-size: 1.5rem; /* Smaller size */
+  }
+
+  .problem p, .solution p { /* Problem & solution text */
+    font-size: 1rem; /* Smaller size */
+  }
+
+  .audience-grid, .features-grid, .education-grid { /* Grids */
+    grid-template-columns: 1fr; /* Single column */
+    gap: 20px; /* Smaller gap */
+  }
+
+  .card { /* Card style */
+    padding: 24px 20px; /* Smaller padding */
+  }
+
+  .feature { /* Feature style */
+    padding: 24px 20px; /* Smaller padding */
+  }
+
+  .audience h2, .features h2, .education h2, .subscribers h2 { /* Section titles */
+    font-size: 1.75rem; /* Smaller font */
+    margin-bottom: 30px; /* Smaller space */
+  }
+
+  .cta h2 { /* CTA title */
+    font-size: 1.75rem; /* Smaller font */
+  }
+
+  .cta p { /* CTA paragraph */
+    font-size: 1.1rem; /* Smaller font */
+  }
+
+  .cta a, .link-cta-signup { /* CTA buttons */
+    padding: 16px 32px; /* Smaller padding */
+    font-size: 1rem; /* Smaller font */
+  }
+
+  .subscribers-grid { /* Subscriber logos */
+    grid-template-columns: 1fr; /* Single column */
+  }
+
+  .education > p, .subscribers > p { /* Section text */
+    font-size: 1.1rem; /* Smaller font */
+  }
+}

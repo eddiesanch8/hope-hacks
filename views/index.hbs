@@ -5,15 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome to ByteSized!</title>
     <link rel="icon" href="/images/icon.png">
+    
 </head>
 <body>
     {{>header}}
 
-    <main id="indexMainDiv">
-        <h1 id="indexH1">{{intro}}</h1>
-        <p id="indexP">{{message}}</p>
+    <main>
+        <img class="main__img" src="/images/main.png" alt="image of phone for landing page">
+
+        <section class="section__div">
+            <h1 class="section__intro">{{intro}}</h1>
+            <p class="section__message">{{message}}</p>
+            <ul>
+                <li id="loginBtn"><button onclick="document.location='/login'">Log In</button></li>
+                <li id="signupBtn"><button onclick="document.location='/signup'">Sign Up</button></li>
+            </ul>
+            <p class="section__about"><i>To learn more, visit our <strong><a href="/aboutus">About</a></strong> page.</i></p>
+        </section>
     </main>
-    
+
     {{>footer}}
 </body>
 </html>
