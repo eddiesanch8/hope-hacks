@@ -50,7 +50,7 @@ header img:hover {
 .login-message.showerror {
   top: 30px;
   opacity: 1;
-  background-color: #fb2b2b; /* Success green */
+  background-color: #fb2b2b;
 }
 
 main {

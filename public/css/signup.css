@@ -31,7 +31,7 @@ header img:hover {
   top: -100px; /* Start hidden above the viewport */
   left: 50%;
   transform: translateX(-50%);
-  background-color: #4caf50;
+  background-color: #919aff;
   color: white;
   padding: 16px 32px;
   border-radius: 8px;
@@ -50,7 +50,7 @@ header img:hover {
 .signup-message.showerror {
   top: 30px;
   opacity: 1;
-  background-color: #fb2b2b; /* Success green */
+  background-color: #fb2b2b;
 }
 
 main {
