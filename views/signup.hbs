@@ -1,19 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Sign Up - ByteSized</title>
-   <link rel="stylesheet" href="/css/signup.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - ByteSized</title>
+    <link rel="stylesheet" href="/css/signup.css">
     <script src="/src/signup.js" defer></script>
 
 </head>
 <body>
-   {{>header}}
-   <div id="signupMessage" class="signup-message"></div>
-   <main>
-       <h1>Create Your Account</h1>
-       <div class="signup-container">
+    <header>
+        <a href="/"><img src="/images/logo.png"></a>
+    </header>
+    
+    <div id="signupMessage" class="signup-message"></div>
+    <main>
+        <h1>Create Your Account</h1>
+        <div class="signup-container">
         <form id="signupForm">
             <label class="form-label" for="first_name">First Name</label>
             <input type="text" name="first_name"  id="first_name" placeholder="First Name">
@@ -27,11 +30,11 @@
             <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" >
             <button type="submit">Sign Up</button>
         </form>
-           <!-- Thank you message (hidden by default) -->
-       </div> 
-   </main>
+            <!-- Thank you message (hidden by default) -->
+        </div> 
+    </main>
 
-   {{>footer}}
+    {{>footer}}
 
 </body>
 </html>
