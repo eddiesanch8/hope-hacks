@@ -116,7 +116,7 @@ label {
 }
 
 .login__form .login__button:hover {
-  background-color: rgb(59, 112, 106);
+  background-color: #c1c1f9;
   color: #fff;
 }
 
