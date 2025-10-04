@@ -62,6 +62,7 @@ main {
   background-size: cover;
   background-position: center;
   padding: 40px 20px;
+  background-color: rgb(0, 0, 59);
 }
 
 /* Title */
@@ -70,6 +71,7 @@ main h1 {
   margin-bottom: 25px;
   text-align: center;
   font-weight: bold;
+  color: white;
 }
 
 /* ---------------- SIGNUP FORM ---------------- */
@@ -139,7 +141,9 @@ footer {
   width: 100%;
   font-size: 16px;
   padding: 16px 0px;
-  border-top: 1px solid rgb(0, 0, 59);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  background-color: rgb(0, 0, 59);
+  color: white;
 }
 
 /* ---------------- RESPONSIVE ---------------- */
