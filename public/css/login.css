@@ -154,7 +154,7 @@ footer {
   width: 100%;
   font-size: 16px;
   padding: 16px 0px;
-  border-top: 1px solid rgb(0, 0, 59);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);;
   background-color: rgb(0, 0, 59);
   color: white;
 }
