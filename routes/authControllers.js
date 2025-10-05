@@ -10,8 +10,17 @@ const userSchema = require("../schemas/userSchema");
 
 // ----------------------- Generating Acesss token for our Users -------------------------------\\
 // how to log out?
-const generateAccessToken = (userId) => {
-  return jwt.sign({ userId }, process.env.JWT_SECRET, { expiresIn: "1d" });
+const generateAccessToken = (user) => {
+  return jwt.sign(
+    {
+      id: user.id,
+      first_name: user.first_name,
+      last_name: user.last_name,
+      email: user.email,
+    },
+    process.env.JWT_SECRET,
+    { expiresIn: "1d" }
+  );
 };
 
 // ----------------------------- first insance of our users -----------------------------------\\
@@ -87,7 +96,7 @@ const login = async (req, res) => {
     }
 
     // Generate JWT token
-    const token = generateAccessToken(user.id);
+    const token = generateAccessToken(user);
     // send back a JSON object with access token for our user
     res.status(200).json({
       userId: user.id,

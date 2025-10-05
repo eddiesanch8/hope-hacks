@@ -81,5 +81,4 @@ logoutBtn.addEventListener("click", () => {
   window.location.href = "/";
   localStorage.removeItem("access_token");
   localStorage.clear();
-  window.location.href = "/";
 });
