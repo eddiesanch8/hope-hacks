@@ -1,14 +1,21 @@
 console.log("hello");
 const token = localStorage.getItem("access_token");
 const userName = localStorage.getItem("first_name");
-console.log("is this your name?", userName);
 // --------------------------- getting items from the DOM ----------------------------------- \\
 const userSearch = document.querySelector("[data-user-search]");
 const searchBtn = document.getElementById("dashboard__button");
 const userForm = document.querySelector("[data-form]");
 const logoutBtn = document.getElementById("logout");
+const userGreeting = getElementById("dropdown__button");
 const articles = document.querySelector("[data-article-container]");
+
 // --------------------------- Declaring Functions ---------------------------------------- \\
+if (!userName) {
+  userGreeting.textContent = "Welcome Back!";
+} else {
+  userGreeting.textContent = `Welcome, ${userName}`;
+}
+
 // empty out the parent container
 function createArticle(obj) {
   // Creates new section and gets Parent Grid
@@ -78,7 +85,7 @@ userForm.addEventListener("submit", (e) => {
 
 // this clears our token from local storage. Technically "loging" us out. Its kind of hacky but for the purposes of this project, this is a fine solution
 logoutBtn.addEventListener("click", () => {
-  window.location.href = "/";
   localStorage.removeItem("access_token");
   localStorage.clear();
+  window.location.href = "/";
 });
