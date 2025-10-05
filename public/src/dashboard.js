@@ -1,7 +1,6 @@
 console.log("hello");
 const token = localStorage.getItem("access_token");
 const userName = localStorage.getItem("first_name");
-console.log("is this your name?", userName);
 // --------------------------- getting items from the DOM ----------------------------------- \\
 const userSearch = document.querySelector("[data-user-search]");
 const searchBtn = document.getElementById("dashboard__button");
