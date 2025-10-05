@@ -1,4 +1,3 @@
-console.log("hello");
 const token = localStorage.getItem("access_token");
 const userName = localStorage.getItem("first_name");
 // --------------------------- getting items from the DOM ----------------------------------- \\
@@ -6,7 +5,7 @@ const userSearch = document.querySelector("[data-user-search]");
 const searchBtn = document.getElementById("dashboard__button");
 const userForm = document.querySelector("[data-form]");
 const logoutBtn = document.getElementById("logout");
-const userGreeting = getElementById("dropdown__button");
+const userGreeting = document.getElementById("dropdown__button");
 const articles = document.querySelector("[data-article-container]");
 
 // --------------------------- Declaring Functions ---------------------------------------- \\
