@@ -32,6 +32,8 @@ loginForm.addEventListener("submit", async (e) => {
     loginMessage.innerHTML = "Login successful! Welcome back!";
     // stores JWT token and redirects user to the get: /dashboard route
     localStorage.setItem("access_token", result.access_token);
+    localStorage.setItem("first_name", result.first_name);
+
     setTimeout(() => {
       window.location.href = "/dashboard";
     }, 2000);
