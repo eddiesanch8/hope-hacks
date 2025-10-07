@@ -9,7 +9,6 @@ const {
 const userSchema = require("../schemas/userSchema");
 
 // ----------------------- Generating Acesss token for our Users -------------------------------\\
-// how to log out?
 const generateAccessToken = (user) => {
   return jwt.sign(
     {
