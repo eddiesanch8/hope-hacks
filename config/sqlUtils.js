@@ -3,10 +3,9 @@ const mysql = require("mysql2/promise");
 const connectToDatabase = require("./db");
 let pool;
 // IIFE!!!!!!!!
-// start that DB right now!!!
 (async () => {
   pool = await connectToDatabase();
-  console.log("a lil iffy about this iffe");
+  // console.log("a lil iffy about this iffe");
 })();
 // for creating the table
 async function createTable(schema) {
