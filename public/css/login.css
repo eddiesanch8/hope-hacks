@@ -27,10 +27,10 @@ header img:hover {
 
 .login-message {
   position: fixed;
-  top: -100px; /* Start hidden above the viewport */
+  top: -100px; 
   left: 50%;
   transform: translateX(-50%);
-  background-color: #4caf50;
+  background-color: E6E6FA;
   color: white;
   padding: 16px 32px;
   border-radius: 8px;
